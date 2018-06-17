@@ -10,7 +10,7 @@
       "name": "Jest Current File",
       "program": "${workspaceFolder}/node_modules/jest/bin/jest",
       "args": ["${relativeFile}"],
-      "console": "integratedTerminal"
+      "console": "integratedTerminal",
       "internalConsoleOptions": "neverOpen"
     }
   ]
