@@ -1,6 +1,6 @@
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 import { ERROR, LOADED, LOADING } from "../api/status";
-import React, { Component } from "react";
+import React, { Component, Fragment } from "react";
 
 import ContactList from "./ContactList";
 import Detail from "./Detail";
@@ -42,9 +42,20 @@ class App extends Component {
     }));
   };
 
+  findItem = match => {
+    const id = parseInt(match.params.id);
+    const repository =
+      this.state.items && this.state.items.filter(item => item.id === id);
+
+    return repository && repository.selection.length === 1
+      ? repository.selection[0]
+      : null;
+  };
+
   render() {
     const { status, items } = this.state;
     const onSearch = this.onSearch;
+    const findItem = this.findItem;
 
     return (
       <Switch>
@@ -52,13 +63,22 @@ class App extends Component {
           path="/"
           exact
           render={props => (
-            <div>
+            <Fragment>
               <Search onChange={onSearch} disabled={status !== LOADED} />
               <ContactList status={status} repository={items} {...props} />
-            </div>
+            </Fragment>
           )}
         />
-        <Route path="/user/:id(\\d+)/" component={Detail} />
+        <Route
+          path="/user/:id(\d+)"
+          render={props => (
+            <Detail
+              status={status}
+              contact={findItem(props.match)}
+              {...props}
+            />
+          )}
+        />
         <Route component={NoMatch} />
       </Switch>
     );

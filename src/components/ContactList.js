@@ -1,6 +1,7 @@
 import { ERROR, LOADING } from "../api/status";
 import React, { PureComponent } from "react";
 
+import ContactListItem from "./ContactListItem";
 import PropTypes from "prop-types";
 import Repository from "../repository";
 
@@ -18,8 +19,8 @@ class ContactList extends PureComponent {
     } else if (status === ERROR) {
       view = <p>Error</p>;
     } else {
-      view = repository.selection.map((item, index) => (
-        <p key={index}>{item.name}</p>
+      view = repository.selection.map((contact, index) => (
+        <ContactListItem key={index} contact={contact} />
       ));
     }
 

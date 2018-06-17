@@ -1,0 +1,12 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Contact list component should render initial state 1`] = `
+<p>
+  <Link
+    replace={false}
+    to="/user/6"
+  >
+    Stanley Vanderhoof
+  </Link>
+</p>
+`;

@@ -8,6 +8,7 @@ jest.mock("../api");
 
 const mockData = [
   {
+    id: 0,
     name: "Oleta Level",
     phone_number: "+442032960159",
     address: "10 London Wall, London EC2M 6SA, UK"

@@ -8,8 +8,8 @@ exports[`Phone book should render initial state 1`] = `
     render={[Function]}
   />
   <Route
-    component={[Function]}
-    path="/user/:id(\\\\\\\\d+)/"
+    path="/user/:id(\\\\d+)"
+    render={[Function]}
   />
   <Route
     component={[Function]}

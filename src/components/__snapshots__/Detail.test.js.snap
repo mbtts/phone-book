@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Detail view component should render initial state 1`] = `
+<React.Fragment>
+  <h3>
+    Stanley Vanderhoof
+  </h3>
+  <p>
+    <a
+      href="tel:+442032960000"
+    >
+      +442032960000
+    </a>
+  </p>
+  <p>
+    17 Anchor Ave, Darwen BB3 0AZ, UK
+  </p>
+</React.Fragment>
+`;
