@@ -1,4 +1,6 @@
 import App from "./App";
+import { LOADING } from "../api/status";
+import { MemoryRouter } from "react-router-dom";
 import React from "react";
 import api from "../api";
 
@@ -14,19 +16,31 @@ const mockData = [
 
 describe("Phone book", () => {
   it("should render initial state", () => {
-    const wrapper = shallow(<App />);
+    const wrapper = shallow(
+      <MemoryRouter initialEntries={["/"]}>
+        <App />
+      </MemoryRouter>
+    );
     expect(wrapper).toMatchSnapshot();
   });
 
   it("should be loading initially", () => {
-    const wrapper = shallow(<App />);
-    expect(wrapper.find("p").text()).toMatch("Loading…");
+    const wrapper = shallow(
+      <MemoryRouter initialEntries={["/"]}>
+        <App />
+      </MemoryRouter>
+    );
+    expect(wrapper.state("status")).toEqual(LOADING);
   });
 
   it("should load the contacts successfully", () => {
     api.mockReturnValueOnce(mockData);
 
-    const wrapper = mount(<App />);
+    const wrapper = mount(
+      <MemoryRouter initialEntries={["/"]}>
+        <App />
+      </MemoryRouter>
+    );
     return Promise.resolve().then(() => {
       wrapper.update();
       const p = wrapper.find("p");

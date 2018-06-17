@@ -1,20 +1,19 @@
+import { BrowserRouter, Route, Switch } from "react-router-dom";
+import { ERROR, LOADED, LOADING } from "../api/status";
 import React, { Component } from "react";
 
+import ContactList from "./ContactList";
+import Detail from "./Detail";
+import NoMatch from "./NoMatch";
+import Repository from "../repository";
+import Search from "./Search";
 import api from "../api";
-
-const status = {
-  LOADING: "LOADING",
-  LOADED: "LOADED",
-  ERROR: "ERROR"
-};
 
 class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      status: status.LOADING,
-      items: [],
-      search: ""
+      status: LOADING
     };
   }
 
@@ -23,35 +22,51 @@ class App extends Component {
       const items = await api();
       this.setState(oldState => ({
         ...oldState,
-        status: status.LOADED,
-        items: items
+        status: LOADED,
+        items: new Repository(items)
       }));
     } catch (e) {
       this.setState(oldState => ({
         ...oldState,
-        status: status.ERROR
+        status: ERROR
       }));
     }
   }
 
-  render() {
-    const thisStatus = this.state.status;
-    let view;
-    if (thisStatus === status.LOADING) {
-      view = <p>Loading…</p>;
-    } else if (thisStatus === status.ERROR) {
-      view = <p>Error</p>;
-    } else {
-      view = this.state.items.map((item, index) => (
-        <p key={index}>{item.name}</p>
-      ));
-    }
+  onSearch = value => {
+    this.setState(oldState => ({
+      ...oldState,
+      items: oldState.items.filter(item =>
+        item.name.toLocaleLowerCase().includes(value.toLocaleLowerCase())
+      )
+    }));
+  };
 
+  render() {
     return (
-      <div>
-        <input type="search" />
-        {view}
-      </div>
+      <BrowserRouter>
+        <Switch>
+          <Route
+            path="/"
+            exact
+            render={props => (
+              <div>
+                <Search
+                  onChange={this.onSearch}
+                  disabled={this.state.status !== LOADED}
+                />
+                <ContactList
+                  status={this.state.status}
+                  repository={this.state.items}
+                  {...props}
+                />
+              </div>
+            )}
+          />
+          <Route path="/user/:id(\\d+)/" component={Detail} />
+          <Route component={NoMatch} />
+        </Switch>
+      </BrowserRouter>
     );
   }
 }

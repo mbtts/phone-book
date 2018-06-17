@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Search component should render initial state 1`] = `
+<input
+  disabled={true}
+  name="search"
+  onChange={[Function]}
+  type="search"
+  value=""
+/>
+`;

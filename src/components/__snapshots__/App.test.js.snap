@@ -2,8 +2,9 @@
 
 exports[`Phone book should render initial state 1`] = `
 <div>
-  <input
-    type="search"
+  <Search
+    disabled={true}
+    onChange={[Function]}
   />
   <p>
     Loading…
