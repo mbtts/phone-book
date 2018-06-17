@@ -1,7 +1,5 @@
-const status = {
-  LOADING: "LOADING",
-  LOADED: "LOADED",
-  ERROR: "ERROR"
-};
+const LOADING = "LOADING";
+const LOADED = "LOADED";
+const ERROR = "ERROR";
 
-export default status;
+export { LOADING, LOADED, ERROR };

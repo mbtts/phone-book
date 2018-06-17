@@ -43,6 +43,9 @@ class App extends Component {
   };
 
   render() {
+    const { status, items } = this.state;
+    const onSearch = this.onSearch;
+
     return (
       <BrowserRouter>
         <Switch>
@@ -51,15 +54,8 @@ class App extends Component {
             exact
             render={props => (
               <div>
-                <Search
-                  onChange={this.onSearch}
-                  disabled={this.state.status !== LOADED}
-                />
-                <ContactList
-                  status={this.state.status}
-                  repository={this.state.items}
-                  {...props}
-                />
+                <Search onChange={onSearch} disabled={status !== LOADED} />
+                <ContactList status={status} repository={items} {...props} />
               </div>
             )}
           />
