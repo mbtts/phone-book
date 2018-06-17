@@ -35,11 +35,11 @@ class App extends Component {
   }
 
   render() {
-    const { status } = this.state;
+    const thisStatus = this.state.status;
     let view;
-    if (status === status.LOADING) {
+    if (thisStatus === status.LOADING) {
       view = <p>Loading…</p>;
-    } else if (status === status.ERROR) {
+    } else if (thisStatus === status.ERROR) {
       view = <p>Error</p>;
     } else {
       view = this.state.items.map((item, index) => (
