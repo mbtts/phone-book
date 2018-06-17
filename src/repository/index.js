@@ -13,7 +13,7 @@ class Repository {
   }
 
   sort(comparator) {
-    const selection = [...this._items];
+    const selection = [...this._selection];
     selection.sort(comparator);
     return new Repository(this._items, selection);
   }

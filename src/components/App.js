@@ -1,20 +1,23 @@
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 import { ERROR, LOADED, LOADING } from "../api/status";
 import React, { Component, Fragment } from "react";
+import api, { sortByLastNameAsc, sortByLastNameDesc } from "../api";
 
 import ContactList from "./ContactList";
 import Detail from "./Detail";
 import NoMatch from "./NoMatch";
 import Repository from "../repository";
 import Search from "./Search";
-import api from "../api";
+import SortButton from "./SortButton";
+import sortByAlpha from "../../assets/svg/round-sort_by_alpha-24px.svg";
 
 class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
       status: LOADING,
-      search: ""
+      search: "",
+      sortOrder: "asc"
     };
   }
 
@@ -46,6 +49,19 @@ class App extends Component {
     }));
   };
 
+  onSortOrder = () => {
+    this.setState(oldState => {
+      const asc = oldState.sortOrder === "asc";
+      const sortOrder = asc ? "desc" : "asc";
+      const sortFn = asc ? sortByLastNameDesc : sortByLastNameAsc;
+      return {
+        ...oldState,
+        sortOrder,
+        items: oldState.items.sort(sortFn)
+      };
+    });
+  };
+
   findItem = match => {
     const id = parseInt(match.params.id);
     const repository =
@@ -58,8 +74,6 @@ class App extends Component {
 
   render() {
     const { status, items } = this.state;
-    const onSearch = this.onSearch;
-    const findItem = this.findItem;
 
     return (
       <Switch>
@@ -70,8 +84,13 @@ class App extends Component {
             <Fragment>
               <Search
                 value={this.state.search}
-                onChange={onSearch}
+                onChange={this.onSearch}
                 disabled={status !== LOADED}
+              />
+              <SortButton
+                icon={sortByAlpha}
+                order={this.state.sortOrder}
+                onClick={this.onSortOrder}
               />
               <ContactList status={status} repository={items} {...props} />
             </Fragment>
@@ -82,7 +101,7 @@ class App extends Component {
           render={props => (
             <Detail
               status={status}
-              contact={findItem(props.match)}
+              contact={this.findItem(props.match)}
               {...props}
             />
           )}

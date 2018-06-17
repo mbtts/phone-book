@@ -38,3 +38,4 @@ Lots.
 - [x] Finish remaining tests
 - [ ] Styling
 - [ ] i18n
+- [ ] look for more elegant solution for svg loading (jest) - try babel inline svg plugin.

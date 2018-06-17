@@ -1,0 +1,53 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Sort button should render ascending 1`] = `
+<button
+  onClick={[MockFunction]}
+>
+  <SVGInline
+    classSuffix="-svg"
+    cleanup={Array []}
+    cleanupExceptions={Array []}
+    component="span"
+    svg="<svg />"
+    width="24"
+  />
+  <span>
+    Asc
+  </span>
+  <SVGInline
+    classSuffix="-svg"
+    cleanup={Array []}
+    cleanupExceptions={Array []}
+    component="span"
+    svg="<svg />"
+    width="24"
+  />
+</button>
+`;
+
+exports[`Sort button should render descending 1`] = `
+<button
+  onClick={[MockFunction]}
+>
+  <SVGInline
+    classSuffix="-svg"
+    cleanup={Array []}
+    cleanupExceptions={Array []}
+    component="span"
+    svg="<svg />"
+    width="24"
+  />
+  <span>
+    Desc
+  </span>
+  <SVGInline
+    classSuffix="-svg"
+    cleanup={Array []}
+    cleanupExceptions={Array []}
+    component="span"
+    svg="<svg />"
+    width="24"
+  />
+</button>
+`;

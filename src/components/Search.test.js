@@ -10,7 +10,7 @@ describe("Search component", () => {
     expect(wrapper).toMatchSnapshot();
   });
 
-  it("should update state when text entered", () => {
+  it("should invoke the change function when text entered", () => {
     const onChange = jest.fn();
     const name = "name";
 

@@ -9,6 +9,7 @@ class Search extends PureComponent {
         name="search"
         type="search"
         placeholder="Search…"
+        autoComplete="off"
         disabled={this.props.disabled}
         value={this.props.value}
         onChange={this.props.onChange}
