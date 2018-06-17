@@ -1,12 +1,10 @@
 # phone-book
 
-[toc]
-
 **NB:** I ran out of time to finish. So still a work in progress.
 
 ## Demo
 
-You can view a the current status [firebase](https://phone-book-d6ed9.firebaseapp.com/).
+View a demo on [firebase](https://phone-book-d6ed9.firebaseapp.com/).
 
 ## Instructions
 
