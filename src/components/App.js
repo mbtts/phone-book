@@ -13,7 +13,8 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      status: LOADING
+      status: LOADING,
+      search: ""
     };
   }
 
@@ -33,11 +34,14 @@ class App extends Component {
     }
   }
 
-  onSearch = value => {
+  onSearch = e => {
+    const search = e.target.value;
+
     this.setState(oldState => ({
       ...oldState,
+      search,
       items: oldState.items.filter(item =>
-        item.name.toLocaleLowerCase().includes(value.toLocaleLowerCase())
+        item.name.toLocaleLowerCase().includes(search.toLocaleLowerCase())
       )
     }));
   };
@@ -64,7 +68,11 @@ class App extends Component {
           exact
           render={props => (
             <Fragment>
-              <Search onChange={onSearch} disabled={status !== LOADED} />
+              <Search
+                value={this.state.search}
+                onChange={onSearch}
+                disabled={status !== LOADED}
+              />
               <ContactList status={status} repository={items} {...props} />
             </Fragment>
           )}

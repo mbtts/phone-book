@@ -4,7 +4,8 @@ exports[`Search component should render initial state 1`] = `
 <input
   disabled={true}
   name="search"
-  onChange={[Function]}
+  onChange={[MockFunction]}
+  placeholder="Search…"
   type="search"
   value=""
 />
