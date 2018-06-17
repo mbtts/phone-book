@@ -34,6 +34,6 @@ Watch and coverage available.
 
 Lots.
 
-- [ ] Fix issue with router and enzyme
-- [ ] Finish remainng tests
+- [x] Fix issue with router and enzyme
+- [x] Finish remaining tests
 - [ ] Styling
