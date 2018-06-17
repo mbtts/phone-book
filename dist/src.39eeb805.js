@@ -7553,7 +7553,7 @@ var App = function (_Component) {
       var onSearch = this.onSearch;
 
       return _react2.default.createElement(
-        _reactRouterDom.BrowserRouter,
+        _reactRouterDom.Switch,
         {
           __source: {
             fileName: _jsxFileName,
@@ -7561,62 +7561,52 @@ var App = function (_Component) {
           },
           __self: this
         },
-        _react2.default.createElement(
-          _reactRouterDom.Switch,
-          {
-            __source: {
-              fileName: _jsxFileName,
-              lineNumber: 51
-            },
-            __self: this
-          },
-          _react2.default.createElement(_reactRouterDom.Route, {
-            path: "/",
-            exact: true,
-            render: function render(props) {
-              return _react2.default.createElement(
-                "div",
-                {
-                  __source: {
-                    fileName: _jsxFileName,
-                    lineNumber: 56
-                  },
-                  __self: _this2
+        _react2.default.createElement(_reactRouterDom.Route, {
+          path: "/",
+          exact: true,
+          render: function render(props) {
+            return _react2.default.createElement(
+              "div",
+              {
+                __source: {
+                  fileName: _jsxFileName,
+                  lineNumber: 55
                 },
-                _react2.default.createElement(_Search2.default, { onChange: onSearch, disabled: status !== _status.LOADED, __source: {
-                    fileName: _jsxFileName,
-                    lineNumber: 57
-                  },
-                  __self: _this2
-                }),
-                _react2.default.createElement(_ContactList2.default, _extends({ status: status, repository: items }, props, {
-                  __source: {
-                    fileName: _jsxFileName,
-                    lineNumber: 58
-                  },
-                  __self: _this2
-                }))
-              );
-            },
-            __source: {
-              fileName: _jsxFileName,
-              lineNumber: 52
-            },
-            __self: this
-          }),
-          _react2.default.createElement(_reactRouterDom.Route, { path: "/user/:id(\\\\d+)/", component: _Detail2.default, __source: {
-              fileName: _jsxFileName,
-              lineNumber: 62
-            },
-            __self: this
-          }),
-          _react2.default.createElement(_reactRouterDom.Route, { component: _NoMatch2.default, __source: {
-              fileName: _jsxFileName,
-              lineNumber: 63
-            },
-            __self: this
-          })
-        )
+                __self: _this2
+              },
+              _react2.default.createElement(_Search2.default, { onChange: onSearch, disabled: status !== _status.LOADED, __source: {
+                  fileName: _jsxFileName,
+                  lineNumber: 56
+                },
+                __self: _this2
+              }),
+              _react2.default.createElement(_ContactList2.default, _extends({ status: status, repository: items }, props, {
+                __source: {
+                  fileName: _jsxFileName,
+                  lineNumber: 57
+                },
+                __self: _this2
+              }))
+            );
+          },
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 51
+          },
+          __self: this
+        }),
+        _react2.default.createElement(_reactRouterDom.Route, { path: "/user/:id(\\\\d+)/", component: _Detail2.default, __source: {
+            fileName: _jsxFileName,
+            lineNumber: 61
+          },
+          __self: this
+        }),
+        _react2.default.createElement(_reactRouterDom.Route, { component: _NoMatch2.default, __source: {
+            fileName: _jsxFileName,
+            lineNumber: 62
+          },
+          __self: this
+        })
       );
     }
   }]);
@@ -25446,13 +25436,23 @@ var _reactDom2 = _interopRequireDefault(_reactDom);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var app = document.getElementById("app");
-_reactDom2.default.render(_react2.default.createElement(_App2.default, {
-  __source: {
-    fileName: _jsxFileName,
-    lineNumber: 7
+_reactDom2.default.render(_react2.default.createElement(
+  _reactRouterDom.BrowserRouter,
+  {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 8
+    },
+    __self: undefined
   },
-  __self: undefined
-}), app);
+  _react2.default.createElement(_App2.default, {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 9
+    },
+    __self: undefined
+  })
+), app);
 },{"./components/App":6,"react-router-dom":7,"react":9,"react-dom":10}],78:[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';

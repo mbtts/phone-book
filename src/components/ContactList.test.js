@@ -1,5 +1,6 @@
+import { ERROR, LOADING } from "../api/status";
+
 import ContactList from "./ContactList";
-import { LOADING } from "../api/status";
 import React from "react";
 
 describe("Phone book", () => {
@@ -9,14 +10,7 @@ describe("Phone book", () => {
   });
 
   it("should display an error if the contacts cannot load", () => {
-    api.mockImplementationOnce(() => {
-      throw new Error();
-    });
-
-    const wrapper = mount(<App />);
-    return Promise.resolve().then(() => {
-      wrapper.update();
-      expect(wrapper.find("p").text()).toMatch("Error");
-    });
+    const wrapper = mount(<ContactList status={ERROR} />);
+    expect(wrapper.find("p").text()).toMatch("Error");
   });
 });

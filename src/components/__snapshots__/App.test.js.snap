@@ -1,13 +1,18 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Phone book should render initial state 1`] = `
-<div>
-  <Search
-    disabled={true}
-    onChange={[Function]}
+<Switch>
+  <Route
+    exact={true}
+    path="/"
+    render={[Function]}
   />
-  <p>
-    Loading…
-  </p>
-</div>
+  <Route
+    component={[Function]}
+    path="/user/:id(\\\\\\\\d+)/"
+  />
+  <Route
+    component={[Function]}
+  />
+</Switch>
 `;

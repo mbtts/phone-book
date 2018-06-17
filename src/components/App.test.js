@@ -21,7 +21,7 @@ describe("Phone book", () => {
         <App />
       </MemoryRouter>
     );
-    expect(wrapper).toMatchSnapshot();
+    expect(wrapper.find(App).dive()).toMatchSnapshot();
   });
 
   it("should be loading initially", () => {
@@ -30,7 +30,12 @@ describe("Phone book", () => {
         <App />
       </MemoryRouter>
     );
-    expect(wrapper.state("status")).toEqual(LOADING);
+    expect(
+      wrapper
+        .find(App)
+        .dive()
+        .state("status")
+    ).toEqual(LOADING);
   });
 
   it("should load the contacts successfully", () => {
@@ -54,7 +59,11 @@ describe("Phone book", () => {
       throw new Error();
     });
 
-    const wrapper = mount(<App />);
+    const wrapper = mount(
+      <MemoryRouter initialEntries={["/"]}>
+        <App />
+      </MemoryRouter>
+    );
     return Promise.resolve().then(() => {
       wrapper.update();
       expect(wrapper.find("p").text()).toMatch("Error");

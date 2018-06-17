@@ -47,22 +47,20 @@ class App extends Component {
     const onSearch = this.onSearch;
 
     return (
-      <BrowserRouter>
-        <Switch>
-          <Route
-            path="/"
-            exact
-            render={props => (
-              <div>
-                <Search onChange={onSearch} disabled={status !== LOADED} />
-                <ContactList status={status} repository={items} {...props} />
-              </div>
-            )}
-          />
-          <Route path="/user/:id(\\d+)/" component={Detail} />
-          <Route component={NoMatch} />
-        </Switch>
-      </BrowserRouter>
+      <Switch>
+        <Route
+          path="/"
+          exact
+          render={props => (
+            <div>
+              <Search onChange={onSearch} disabled={status !== LOADED} />
+              <ContactList status={status} repository={items} {...props} />
+            </div>
+          )}
+        />
+        <Route path="/user/:id(\\d+)/" component={Detail} />
+        <Route component={NoMatch} />
+      </Switch>
     );
   }
 }
