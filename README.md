@@ -6,6 +6,6 @@ I ran out of time to finish.
 
 Lots.
 
-[ ] Fix issue with router and enzyme
-[ ] Finish remainng tests
-[ ] Styling
+- [ ] Fix issue with router and enzyme
+- [ ] Finish remainng tests
+- [ ] Styling
