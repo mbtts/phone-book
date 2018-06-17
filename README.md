@@ -37,3 +37,4 @@ Lots.
 - [x] Fix issue with router and enzyme
 - [x] Finish remaining tests
 - [ ] Styling
+- [ ] i18n
