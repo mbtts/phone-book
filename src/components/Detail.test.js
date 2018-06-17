@@ -2,17 +2,13 @@ import { ERROR, LOADED, LOADING } from "../api/status";
 
 import Detail from "./Detail";
 import React from "react";
-
-const mockData = {
-  id: 6,
-  name: "Stanley Vanderhoof",
-  phone_number: "+442032960000",
-  address: "17 Anchor Ave, Darwen BB3 0AZ, UK"
-};
+import { mockData } from "../api/__mocks__";
 
 describe("Detail view component", () => {
+  const contact = mockData[1];
+
   it("should render initial state", () => {
-    const wrapper = shallow(<Detail status={LOADED} contact={mockData} />);
+    const wrapper = shallow(<Detail status={LOADED} contact={contact} />);
     expect(wrapper).toMatchSnapshot();
   });
 

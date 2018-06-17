@@ -3,17 +3,9 @@ import { LOADING } from "../api/status";
 import { MemoryRouter } from "react-router-dom";
 import React from "react";
 import api from "../api";
+import { mockData } from "../api/__mocks__";
 
 jest.mock("../api");
-
-const mockData = [
-  {
-    id: 0,
-    name: "Oleta Level",
-    phone_number: "+442032960159",
-    address: "10 London Wall, London EC2M 6SA, UK"
-  }
-];
 
 describe("Phone book", () => {
   it("should render initial state", () => {
@@ -40,8 +32,6 @@ describe("Phone book", () => {
   });
 
   it("should load the contacts successfully", () => {
-    api.mockReturnValueOnce(mockData);
-
     const wrapper = mount(
       <MemoryRouter initialEntries={["/"]}>
         <App />
@@ -50,8 +40,8 @@ describe("Phone book", () => {
     return Promise.resolve().then(() => {
       wrapper.update();
       const p = wrapper.find("p");
-      expect(p).toHaveLength(1);
-      expect(p.text()).toMatch(mockData[0].name);
+      expect(p).toHaveLength(2);
+      expect(p.first().text()).toMatch(mockData[0].name);
     });
   });
 

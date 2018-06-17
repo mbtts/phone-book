@@ -1,24 +1,20 @@
 import ContactListItem from "./ContactListItem";
 import { MemoryRouter } from "react-router-dom";
 import React from "react";
-
-const mockData = {
-  id: 6,
-  name: "Stanley Vanderhoof",
-  phone_number: "+442032960000",
-  address: "17 Anchor Ave, Darwen BB3 0AZ, UK"
-};
+import { mockData } from "../api/__mocks__";
 
 describe("Contact list component", () => {
+  const contact = mockData[1];
+
   it("should render initial state", () => {
-    const wrapper = shallow(<ContactListItem contact={mockData} />);
+    const wrapper = shallow(<ContactListItem contact={contact} />);
     expect(wrapper).toMatchSnapshot();
   });
 
   it("should render the contact name and link", () => {
     const wrapper = shallow(
       <MemoryRouter>
-        <ContactListItem contact={mockData} />
+        <ContactListItem contact={contact} />
       </MemoryRouter>
     );
     const link = wrapper
@@ -26,7 +22,7 @@ describe("Contact list component", () => {
       .dive()
       .find("Link");
 
-    expect(link.children().text()).toEqual(mockData.name);
-    expect(link.prop("to")).toEqual(`/user/${mockData.id}`);
+    expect(link.children().text()).toEqual(contact.name);
+    expect(link.prop("to")).toEqual(`/user/${contact.id}`);
   });
 });
