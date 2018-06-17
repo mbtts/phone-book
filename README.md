@@ -4,6 +4,10 @@
 
 **NB:** I ran out of time to finish. So still a work in progress.
 
+## Demo
+
+You can view a the current status [firebase](https://phone-book-d6ed9.firebaseapp.com/).
+
 ## Instructions
 
 See scripts in `package.json` for details.
