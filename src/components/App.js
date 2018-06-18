@@ -1,6 +1,6 @@
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 import { ERROR, LOADED, LOADING } from "../api/status";
-import React, { Component, Fragment } from "react";
+import React, { Component } from "react";
 import api, { sortByLastNameAsc, sortByLastNameDesc } from "../api";
 
 import ContactList from "./ContactList";
@@ -24,16 +24,14 @@ class App extends Component {
   async componentDidMount() {
     try {
       const items = await api();
-      this.setState(oldState => ({
-        ...oldState,
+      this.setState({
         status: LOADED,
         items: new Repository(items)
-      }));
+      });
     } catch (e) {
-      this.setState(oldState => ({
-        ...oldState,
+      this.setState({
         status: ERROR
-      }));
+      });
     }
   }
 
@@ -41,7 +39,6 @@ class App extends Component {
     const search = e.target.value;
 
     this.setState(oldState => ({
-      ...oldState,
       search,
       items: oldState.items.filter(item =>
         item.name.toLocaleLowerCase().includes(search.toLocaleLowerCase())
@@ -51,7 +48,6 @@ class App extends Component {
 
   onClearSearch = () => {
     this.setState(oldState => ({
-      ...oldState,
       search: "",
       items: oldState.items.reset()
     }));
@@ -63,7 +59,6 @@ class App extends Component {
       const sortOrder = asc ? "desc" : "asc";
       const sortFn = asc ? sortByLastNameDesc : sortByLastNameAsc;
       return {
-        ...oldState,
         sortOrder,
         items: oldState.items.sort(sortFn)
       };
