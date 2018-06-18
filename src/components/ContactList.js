@@ -24,7 +24,7 @@ class ContactList extends PureComponent {
       ));
     }
 
-    return <div class="contactlist__list">{view}</div>;
+    return <div className="contactlist__list">{view}</div>;
   }
 }
 

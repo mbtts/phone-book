@@ -2,6 +2,8 @@
 
 exports[`Search component should render initial state 1`] = `
 <input
+  autoComplete="off"
+  className="search"
   disabled={true}
   name="search"
   onChange={[MockFunction]}

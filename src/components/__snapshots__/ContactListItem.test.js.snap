@@ -1,8 +1,11 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Contact list component should render initial state 1`] = `
-<p>
+<p
+  className="listitem"
+>
   <Link
+    className="listitem__link"
     replace={false}
     to="/user/6"
   >

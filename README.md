@@ -39,3 +39,6 @@ Lots.
 - [ ] Styling
 - [ ] i18n
 - [ ] look for more elegant solution for svg loading (jest) - try babel inline svg plugin.
+- [ ] add back button
+- [ ] add clear search button
+- [ ] add map

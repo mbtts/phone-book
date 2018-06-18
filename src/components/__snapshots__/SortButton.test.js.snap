@@ -2,6 +2,7 @@
 
 exports[`Sort button should render ascending 1`] = `
 <button
+  className="sortButton"
   onClick={[MockFunction]}
 >
   <SVGInline
@@ -28,6 +29,7 @@ exports[`Sort button should render ascending 1`] = `
 
 exports[`Sort button should render descending 1`] = `
 <button
+  className="sortButton"
   onClick={[MockFunction]}
 >
   <SVGInline

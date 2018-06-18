@@ -5,7 +5,7 @@ describe("Search component", () => {
   it("should render initial state", () => {
     const onChange = jest.fn();
     const wrapper = shallow(
-      <Search value="" disabled={true} onChange={onChange} />
+      <Search className="search" value="" disabled={true} onChange={onChange} />
     );
     expect(wrapper).toMatchSnapshot();
   });
@@ -15,7 +15,12 @@ describe("Search component", () => {
     const name = "name";
 
     const wrapper = shallow(
-      <Search value="" disabled={false} onChange={onChange} />
+      <Search
+        className="search"
+        value=""
+        disabled={false}
+        onChange={onChange}
+      />
     );
 
     const event = {

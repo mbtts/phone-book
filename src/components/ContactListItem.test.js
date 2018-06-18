@@ -14,7 +14,7 @@ describe("Contact list component", () => {
   it("should render the contact name and link", () => {
     const wrapper = shallow(
       <MemoryRouter>
-        <ContactListItem contact={contact} />
+        <ContactListItem className="listItem" contact={contact} />
       </MemoryRouter>
     );
     const link = wrapper
