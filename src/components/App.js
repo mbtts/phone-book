@@ -1,7 +1,7 @@
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 import { ERROR, LOADED, LOADING } from "../api/status";
 import React, { Component } from "react";
-import api, { sortByLastNameAsc, sortByLastNameDesc } from "../api";
+import api, { sortByLastNameAsc, sortByLastNameDesc } from "../api/contacts";
 
 import ContactList from "./ContactList";
 import Detail from "./Detail";

@@ -9,6 +9,16 @@ exports[`Detail view component should render initial state 1`] = `
   >
     Stanley Vanderhoof
   </h3>
+  <ContactMap
+    contact={
+      Object {
+        "address": "17 Anchor Ave, Darwen BB3 0AZ, UK",
+        "id": 6,
+        "name": "Stanley Vanderhoof",
+        "phone_number": "+442032960000",
+      }
+    }
+  />
   <p
     className="contact__field contact__field--phone"
   >

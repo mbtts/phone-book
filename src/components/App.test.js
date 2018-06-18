@@ -2,10 +2,10 @@ import App from "./App";
 import { LOADING } from "../api/status";
 import { MemoryRouter } from "react-router-dom";
 import React from "react";
-import api from "../api";
-import { mockData } from "../api/__mocks__";
+import api from "../api/contacts";
+import { mockData } from "../api/__mocks__/contacts";
 
-jest.mock("../api");
+jest.mock("../api/contacts");
 
 describe("Phone book", () => {
   it("should render initial state", () => {

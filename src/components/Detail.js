@@ -1,6 +1,7 @@
 import { ERROR, LOADED, LOADING } from "../api/status";
-import React, { Fragment, PureComponent } from "react";
+import React, { PureComponent } from "react";
 
+import ContactMap from "./ContactMap";
 import PropTypes from "prop-types";
 
 class Detail extends PureComponent {
@@ -20,6 +21,7 @@ class Detail extends PureComponent {
       view = (
         <div className="contact">
           <h3 className="contact__name">{contact.name}</h3>
+          <ContactMap contact={contact} />
           <p className="contact__field contact__field--phone">
             <a className="contact__link" href={`tel:${contact.phone_number}`}>
               {contact.phone_number}

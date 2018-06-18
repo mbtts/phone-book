@@ -40,5 +40,12 @@ Lots.
 - [ ] i18n
 - [ ] look for more elegant solution for svg loading (jest) - try babel inline svg plugin.
 - [ ] add back button
-- [ ] add clear search button
-- [ ] add map
+- [x] add clear search button
+- [x] add map
+- [ ] Component to encapsulate loading/error states
+- [ ] rety on error
+- [ ] 404 screen
+- [ ] Master/detail view on wider screens (router media queries)
+- [ ] context api for state
+- [ ] Flow
+- [ ] CI

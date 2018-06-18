@@ -2,7 +2,7 @@ import { ERROR, LOADED, LOADING } from "../api/status";
 
 import Detail from "./Detail";
 import React from "react";
-import { mockData } from "../api/__mocks__";
+import { mockData } from "../api/__mocks__/contacts";
 
 describe("Detail view component", () => {
   const contact = mockData[1];

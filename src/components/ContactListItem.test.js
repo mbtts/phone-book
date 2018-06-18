@@ -1,7 +1,7 @@
 import ContactListItem from "./ContactListItem";
 import { MemoryRouter } from "react-router-dom";
 import React from "react";
-import { mockData } from "../api/__mocks__";
+import { mockData } from "../api/__mocks__/contacts";
 
 describe("Contact list component", () => {
   const contact = mockData[1];
