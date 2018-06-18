@@ -81,20 +81,24 @@ class App extends Component {
           path="/"
           exact
           render={props => (
-            <div class="contactlist">
-              <div class="toolbar">
-                <Search
-                  value={this.state.search}
-                  onChange={this.onSearch}
-                  disabled={status !== LOADED}
-                  styleClass="toolbar__search"
-                />
-                <SortButton
-                  icon={sortByAlpha}
-                  order={this.state.sortOrder}
-                  onClick={this.onSortOrder}
-                  styleClass="toolbar__button toolbar__button--wide"
-                />
+            <div className="contactlist">
+              <div className="toolbar">
+                <div className="toolbar__panel toolbar__panel--search">
+                  <Search
+                    value={this.state.search}
+                    onChange={this.onSearch}
+                    disabled={status !== LOADED}
+                    className="toolbar__search"
+                  />
+                </div>
+                <div className="toolbar__panel toolbar__panel--buttons">
+                  <SortButton
+                    icon={sortByAlpha}
+                    order={this.state.sortOrder}
+                    onClick={this.onSortOrder}
+                    className="toolbar__button toolbar__button--wide"
+                  />
+                </div>
               </div>
               <ContactList status={status} repository={items} {...props} />
             </div>

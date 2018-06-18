@@ -15,7 +15,7 @@ class SortButton extends PureComponent {
     const label = asc ? "Asc" : "Desc";
     const icon = asc ? arrowDropUp : arrowDropDown;
     return (
-      <button onClick={this.props.onClick} className={this.props.styleClass}>
+      <button onClick={this.props.onClick} className={this.props.className}>
         <SVGInline width="24" svg={this.props.icon} />
         <span>{label}</span>
         <SVGInline width="24" svg={icon} />
@@ -28,7 +28,7 @@ SortButton.propTypes = {
   icon: PropTypes.string.isRequired,
   order: PropTypes.oneOf(["asc", "desc"]).isRequired,
   onClick: PropTypes.func.isRequired,
-  styleClass: PropTypes.string.isRequired
+  className: PropTypes.string.isRequired
 };
 
 export default SortButton;
