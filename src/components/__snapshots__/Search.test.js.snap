@@ -1,14 +1,30 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Search component should render initial state 1`] = `
-<input
-  autoComplete="off"
-  className="search"
-  disabled={true}
-  name="search"
-  onChange={[MockFunction]}
-  placeholder="Search…"
-  type="search"
-  value=""
-/>
+<React.Fragment>
+  <input
+    autoComplete="off"
+    className="search"
+    disabled={true}
+    name="search"
+    onChange={[MockFunction]}
+    placeholder="Search…"
+    type="text"
+    value=""
+  />
+  <button
+    className="clearsearch"
+    disabled={true}
+    onClick={[MockFunction]}
+  >
+    <SVGInline
+      classSuffix="-svg"
+      cleanup={Array []}
+      cleanupExceptions={Array []}
+      component="span"
+      svg="<svg />"
+      width="24"
+    />
+  </button>
+</React.Fragment>
 `;

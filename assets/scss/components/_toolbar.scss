@@ -8,8 +8,11 @@
 }
 
 .toolbar__panel {
-  flex: 1 0 16rem;
   margin-bottom: 1rem;
+}
+
+.toolbar__panel--search {
+  display: flex;
 }
 
 .toolbar__panel--buttons {
@@ -33,6 +36,30 @@
   &::placeholder {
     color: $light;
   }
+}
+
+.toolbar__clearsearch {
+  border: none;
+  background: transparent;
+  border-bottom: 1px solid $light;
+  transition: border-bottom-color 0.3s ease-in-out;
+
+  & path:not([fill]) {
+    fill: $white;
+  }
+
+  & svg {
+    transition: opacity 0.3s ease-in-out;
+  }
+
+  &:disabled svg {
+    opacity: 0.1;
+  }
+}
+
+.toolbar__search:focus + .toolbar__clearsearch {
+  color: $white;
+  border-bottom-color: $white;
 }
 
 .toolbar__button {

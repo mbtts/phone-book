@@ -49,6 +49,14 @@ class App extends Component {
     }));
   };
 
+  onClearSearch = () => {
+    this.setState(oldState => ({
+      ...oldState,
+      search: "",
+      items: oldState.items.reset()
+    }));
+  };
+
   onSortOrder = () => {
     this.setState(oldState => {
       const asc = oldState.sortOrder === "asc";
@@ -87,8 +95,10 @@ class App extends Component {
                   <Search
                     value={this.state.search}
                     onChange={this.onSearch}
+                    onClearClick={this.onClearSearch}
                     disabled={status !== LOADED}
                     className="toolbar__search"
+                    clearClassName="toolbar__clearsearch"
                   />
                 </div>
                 <div className="toolbar__panel toolbar__panel--buttons">
