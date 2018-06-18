@@ -13,6 +13,7 @@ class Search extends PureComponent {
         disabled={this.props.disabled}
         value={this.props.value}
         onChange={this.props.onChange}
+        className={this.props.styleClass}
       />
     );
   }
@@ -21,7 +22,8 @@ class Search extends PureComponent {
 Search.propTypes = {
   value: PropTypes.string.isRequired,
   onChange: PropTypes.func.isRequired,
-  disabled: PropTypes.bool.isRequired
+  disabled: PropTypes.bool.isRequired,
+  styleClass: PropTypes.string.isRequired
 };
 
 export default Search;

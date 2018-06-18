@@ -18,13 +18,17 @@ class Detail extends PureComponent {
       view = <p>Error</p>;
     } else if (status === LOADED && contact) {
       view = (
-        <Fragment>
-          <h3>{contact.name}</h3>
-          <p>
-            <a href={`tel:${contact.phone_number}`}>{contact.phone_number}</a>
+        <div className="contact">
+          <h3 className="contact__name">{contact.name}</h3>
+          <p className="contact__field contact__field--phone">
+            <a className="contact__link" href={`tel:${contact.phone_number}`}>
+              {contact.phone_number}
+            </a>
           </p>
-          <p>{contact.address}</p>
-        </Fragment>
+          <p className="contact__field contact__field--address">
+            {contact.address}
+          </p>
+        </div>
       );
     }
 

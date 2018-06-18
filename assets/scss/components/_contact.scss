@@ -1,0 +1,23 @@
+.contact__name {
+  font-size: 2rem;
+  background: $dark;
+  color: $white;
+  margin: 0;
+  padding: 5rem 1rem;
+}
+
+.contact__field {
+  font-size: 1.5rem;
+  padding: 1rem;
+  margin: 0;
+}
+
+.contact__field--phone {
+  background: $primary;
+  color: $white;
+}
+
+.contact__link {
+  color: #fff;
+  text-decoration: none;
+}

@@ -81,19 +81,23 @@ class App extends Component {
           path="/"
           exact
           render={props => (
-            <Fragment>
-              <Search
-                value={this.state.search}
-                onChange={this.onSearch}
-                disabled={status !== LOADED}
-              />
-              <SortButton
-                icon={sortByAlpha}
-                order={this.state.sortOrder}
-                onClick={this.onSortOrder}
-              />
+            <div class="contactlist">
+              <div class="toolbar">
+                <Search
+                  value={this.state.search}
+                  onChange={this.onSearch}
+                  disabled={status !== LOADED}
+                  styleClass="toolbar__search"
+                />
+                <SortButton
+                  icon={sortByAlpha}
+                  order={this.state.sortOrder}
+                  onClick={this.onSortOrder}
+                  styleClass="toolbar__button toolbar__button--wide"
+                />
+              </div>
               <ContactList status={status} repository={items} {...props} />
-            </Fragment>
+            </div>
           )}
         />
         <Route

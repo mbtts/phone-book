@@ -1,0 +1,10 @@
+.contactlist {
+  display: grid;
+  grid-template-rows: auto 1fr;
+  overflow: hidden;
+  height: 100vh;
+}
+
+.contactlist__list {
+  overflow: auto;
+}
