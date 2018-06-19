@@ -1,4 +1,4 @@
-import { Gmaps, InfoWindow, Marker } from "react-gmaps";
+import { Gmaps, Marker } from "react-gmaps";
 import React, { PureComponent } from "react";
 import { geoCode, initialiseMapsApi } from "../api/geocode";
 

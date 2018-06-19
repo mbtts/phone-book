@@ -37,7 +37,8 @@ describe("Phone book", () => {
         <App />
       </MemoryRouter>
     );
-    return Promise.resolve().then(() => {
+
+    setInterval(() => {
       wrapper.update();
       const p = wrapper.find("p");
       expect(p).toHaveLength(2);
@@ -55,7 +56,8 @@ describe("Phone book", () => {
         <App />
       </MemoryRouter>
     );
-    return Promise.resolve().then(() => {
+
+    setInterval(() => {
       wrapper.update();
       expect(wrapper.find("p").text()).toMatch("Error");
     });

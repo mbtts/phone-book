@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "main": "index.js",
   "repository": "git@github.com:mbtts/phone-book.git",
-  "author": "mbtts <matthewbetts@me.com>",
+  "author": "mbtts",
   "license": "MIT",
   "dependencies": {
     "react": "^16.4.1",
