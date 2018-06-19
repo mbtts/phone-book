@@ -38,7 +38,7 @@ describe("Phone book", () => {
       </MemoryRouter>
     );
 
-    setInterval(() => {
+    process.nextTick(() => {
       wrapper.update();
       const p = wrapper.find("p");
       expect(p).toHaveLength(2);
@@ -57,7 +57,7 @@ describe("Phone book", () => {
       </MemoryRouter>
     );
 
-    setInterval(() => {
+    process.nextTick(() => {
       wrapper.update();
       expect(wrapper.find("p").text()).toMatch("Error");
     });
