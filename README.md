@@ -1,5 +1,8 @@
 # phone-book
 
+![Travis](https://img.shields.io/travis/mbtts/phone-book.svg?style=for-the-badge)
+![Coveralls github](https://img.shields.io/coveralls/github/mbtts/phone-book.svg?style=for-the-badge)
+
 **NB:** I ran out of time to finish. So still a work in progress.
 
 ## Demo
@@ -8,27 +11,25 @@ View a demo on [firebase](https://phone-book-d6ed9.firebaseapp.com/).
 
 ## Instructions
 
-See scripts in `package.json` for details.
-
-To run (port 1234):
+### To run (port `1234`):
 
 ```
 yarn start
 ```
 
-To override port:
+### To override port number:
 
 ```
-yarn start -- --<port>
+yarn start -- --port=<number>
 ```
 
-To test:
+### To test:
 
 ```
 yarn test
 ```
 
-Watch and coverage available.
+Watch and coverage available (see scripts in `package.json` for details).
 
 ## TODO
 
@@ -48,4 +49,4 @@ Lots.
 - [ ] Master/detail view on wider screens (router media queries)
 - [ ] context api for state
 - [ ] Flow
-- [ ] CI
+- [x] CI
