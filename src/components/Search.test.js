@@ -5,10 +5,10 @@ describe("Search component", () => {
   const onChange = jest.fn();
   const onClear = jest.fn();
 
-  beforeEach = () => {
+  beforeEach(() => {
     onChange.mockClear();
     onClear.mockClear();
-  };
+  });
 
   it("should render initial state", () => {
     const wrapper = shallow(
