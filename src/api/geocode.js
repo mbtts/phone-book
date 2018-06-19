@@ -2,15 +2,11 @@ const GLOBAL_INIT = "initMaps";
 
 const cache = {};
 
-const processResults = (address, results, resolve, reject) => {
-  if (results[0]) {
-    const location = results[0].geometry.location;
-    const coords = { lat: location.lat(), lng: location.lng() };
-    cache[address] = coords;
-    resolve(coords);
-  } else {
-    reject("No results found");
-  }
+const processResults = (address, results, resolve) => {
+  const location = results[0].geometry.location;
+  const coords = { lat: location.lat(), lng: location.lng() };
+  cache[address] = coords;
+  resolve(coords);
 };
 
 const geoCode = address => {
@@ -22,8 +18,8 @@ const geoCode = address => {
     const geocoder = new google.maps.Geocoder();
     geocoder.geocode({ address }, (results, status) => {
       status === "OK"
-        ? processResults(address, results, resolve, reject)
-        : reject(`Geocode error ${status}`);
+        ? processResults(address, results, resolve)
+        : reject(`Geocode error: ${status}`);
     });
   });
 };
