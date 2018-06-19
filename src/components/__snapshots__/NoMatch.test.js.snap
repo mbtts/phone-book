@@ -1,0 +1,7 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`No match component should render initial state 1`] = `
+<p>
+  Page cannot be found
+</p>
+`;

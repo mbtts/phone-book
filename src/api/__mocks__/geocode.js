@@ -18,4 +18,15 @@ const createMockGeocoder = (status, lat, lang) => {
   };
 };
 
-export { createMockGeocoder };
+const initialiseMapsApi = jest.fn().mockImplementation(() => {
+  return Promise.resolve({});
+});
+
+const geoCode = jest.fn().mockImplementation(() => {
+  return Promise.resolve({
+    lat: 53.6980027,
+    lng: -2.476654
+  });
+});
+
+export { geoCode, initialiseMapsApi, createMockGeocoder };
