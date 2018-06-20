@@ -2,6 +2,7 @@ import { ERROR, LOADED, LOADING } from "../api/status";
 import React, { PureComponent } from "react";
 
 import ContactMap from "./ContactMap";
+import NoMatch from "./NoMatch";
 import PropTypes from "prop-types";
 
 class Detail extends PureComponent {
@@ -32,6 +33,8 @@ class Detail extends PureComponent {
           </p>
         </div>
       );
+    } else if (status === LOADED) {
+      view = <NoMatch />;
     }
 
     return view;

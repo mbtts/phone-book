@@ -1,7 +1,7 @@
 import { ERROR, LOADED, LOADING } from "../api/status";
 import React, { Component } from "react";
 import { Route, Switch } from "react-router-dom";
-import api, { sortByLastNameAsc, sortByLastNameDesc } from "../api/contacts";
+import { sortByLastNameAsc, sortByLastNameDesc } from "../api/contactSort";
 
 import ContactList from "./ContactList";
 import Detail from "./Detail";
@@ -9,6 +9,7 @@ import NoMatch from "./NoMatch";
 import Repository from "../repository";
 import Search from "./Search";
 import SortButton from "./SortButton";
+import api from "../api/contacts";
 import sortByAlpha from "../../assets/svg/round-sort_by_alpha-24px.svg";
 
 class App extends Component {

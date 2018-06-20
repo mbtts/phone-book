@@ -1,4 +1,6 @@
-import api, { sortByLastNameAsc, sortByLastNameDesc } from "./contacts";
+import { sortByLastNameAsc, sortByLastNameDesc } from "./contactSort";
+
+import api from "./contacts";
 
 describe("contacts api", () => {
   const names = [
