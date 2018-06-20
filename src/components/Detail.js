@@ -33,7 +33,7 @@ class Detail extends PureComponent {
           </p>
         </div>
       );
-    } else if (status === LOADED) {
+    } else {
       view = <NoMatch />;
     }
 

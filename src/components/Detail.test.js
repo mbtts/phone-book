@@ -1,6 +1,7 @@
 import { ERROR, LOADED, LOADING } from "../api/status";
 
 import Detail from "./Detail";
+import NoMatch from "./NoMatch";
 import React from "react";
 import { mockData } from "../api/__mocks__/contacts";
 
@@ -18,7 +19,7 @@ describe("Detail view component", () => {
   });
 
   it("should display an error if the detail cannot load", () => {
-    const wrapper = shallow(<Detail status={LOADING} contact={null} />);
-    expect(wrapper.find("p").text()).toEqual("Loading…");
+    const wrapper = shallow(<Detail status={LOADED} contact={null} />);
+    expect(wrapper.containsMatchingElement(<NoMatch />)).toBe(true);
   });
 });
